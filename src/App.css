@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,18 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+/* modes */
+.night {
+  background-color: black;
+}
+.day {
+  background-color: whitesmoke;
+}
+
+/* scoreboard */
+.score {
+  text-align: right;
+  font-size: 60;
 }
