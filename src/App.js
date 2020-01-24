@@ -1,19 +1,16 @@
 import React, { useState } from 'react'
 import './App.css'
 import Score from "./Score"
+import Maze from "./Maze"
 
 function App() {
-  const [mode, setMode] = useState("night")
-  
-  function handleClick(){
-    setMode(prevMode => prevMode === "night" ? "day" : "night")
-  }
   
   return (
-    <div className={mode} onClick={handleClick}>
+    <div>
       <Score />
+      <Maze/>
     </div>
-    )
+  )
 }
 
 export default App
