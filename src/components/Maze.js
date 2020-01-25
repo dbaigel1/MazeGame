@@ -1,18 +1,13 @@
 import React, { useState } from "react"
 import SearchBox from "./SearchBox"
 
-function Maze() {
-    const [mode, setMode] = useState("night")
-
-    function handleClick(){
-        console.log(mode)
-        setMode(prevMode => prevMode === "night" ? "day" : "night")
-    }
+function Maze(props) {
+    
     
     return (
-        <div className={mode} onClick={handleClick}>
+        <div className={props.mode}>
             <div>
-                <h3>{mode} mode</h3>
+                <h3>{props.mode} mode</h3>
                 <SearchBox />
             
             </div>

@@ -4,12 +4,16 @@ import Score from "./components/Score"
 import Maze from "./components/Maze"
 
 function App() {
+  const [mode, setMode] = useState("night")
 
+  function handleClick(){
+      setMode(prevMode => prevMode === "night" ? "day" : "night")
+  }
 
   return (
     <div>
-      <Score />
-      <Maze />
+      <Score handleClick={handleClick}/>
+      <Maze mode={mode}/>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 
-function Score(){
+function Score(props){
     const [score, setScore] = useState(0)
     const [visible, setVisible] = useState(false)
     
@@ -17,7 +17,7 @@ function Score(){
 
     if (visible === true) { 
         return (
-            <div>
+            <div onClick={props.handleClick}>
                 <h3 className="score">Score: {score}</h3> 
             </div>
         ) 
