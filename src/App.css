@@ -55,3 +55,10 @@
   font-size: 40;
   background-color: bisque;
 }
+
+/* search box */
+.search {
+  text-align: center;
+  vertical-align: middle;
+}
+

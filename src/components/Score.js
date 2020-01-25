@@ -4,6 +4,7 @@ function Score(){
     const [score, setScore] = useState(0)
     const [visible, setVisible] = useState(false)
     
+    
     document.addEventListener('keydown', logKey)
 
     function logKey(e) {
@@ -11,6 +12,8 @@ function Score(){
             setVisible(true)
         }
     }
+
+    
 
     if (visible === true) { 
         return (
