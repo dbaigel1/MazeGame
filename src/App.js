@@ -5,15 +5,26 @@ import Maze from "./components/Maze"
 
 function App() {
   const [mode, setMode] = useState("night")
+  const [visible, setVisible] = useState(false)
 
   function handleClick(){
       setMode(prevMode => prevMode === "night" ? "day" : "night")
   }
 
+
+  document.addEventListener('keydown', logKey)
+
+  function logKey(e) {
+        if (e.key === "t"){ 
+          setVisible({visible: true})
+        }
+        
+    }
+
   return (
     <div>
       <Score handleClick={handleClick}/>
-      <Maze mode={mode}/>
+      <Maze mode={mode} visible={visible}/>
     </div>
   )
 }

@@ -50,10 +50,20 @@
 }
 
 /* scoreboard */
-.score {
+.scoreboard {
   text-align: right;
-  font-size: 40;
+  position: relative;
   background-color: bisque;
+}
+
+.user {
+  left: 10;
+  position: absolute;
+  font-size: 30;
+}
+
+.score {
+  font-size: 30;
 }
 
 /* search box */

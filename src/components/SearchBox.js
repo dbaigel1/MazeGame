@@ -5,6 +5,7 @@ class SearchBox extends React.Component {
         super()
         this.state = {
             value: ""
+
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -25,7 +26,7 @@ class SearchBox extends React.Component {
         this.setState({value: event.target.value})
     }
 
-    render() {
+    render() {    
         return (
             <div className = "search">
                 <form onSubmit={this.handleSubmit}>
