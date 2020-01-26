@@ -15,9 +15,10 @@ function App() {
   document.addEventListener('keydown', logKey)
 
   function logKey(e) {
-        if (e.key === "t"){ 
-          setVisible({visible: true})
-        }
+    /* makes the search bar visible */     
+    if (e.key === "t"){ 
+      setVisible({visible: true})
+    }
         
     }
 
