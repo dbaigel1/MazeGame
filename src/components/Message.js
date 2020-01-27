@@ -4,11 +4,15 @@ import React from "react"
     timeout function gets rid of message after amount of time
 */ 
 function Message(props) {
+    let displayAmount = 1000
+    if (props.message === "tap 's' to display the scoreboard. After that, you're on your own...") {
+        displayAmount +=2000
+    }
 
     setTimeout(function(){
         props.setMessage("")
     
-    }, 3000)
+    }, displayAmount)
 
     if (props.message) {
         return (
