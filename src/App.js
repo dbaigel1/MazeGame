@@ -9,6 +9,7 @@ function App() {
   const [mode, setMode] = useState("night")
   const [searchvisible, setVisible] = useState(false)
   const [message, setMessage] = useState("tap 's' to display the scoreboard. After that, you're on your own...")
+  const [score, setScore] = useState(0)
 
   /* when scoreboard is clicked, switch between day and night mode */ 
   function handleClick(){
@@ -40,6 +41,8 @@ function App() {
     <div>
       <Score 
         handleClick={handleClick} 
+        setScore = {setScore}
+        score = {score}
       />
 
       <Maze 
@@ -47,6 +50,7 @@ function App() {
         searchvisible={searchvisible}
         message={message}
         setMessage={setMessage}
+        setScore = {setScore}
       />
     </div>
   )

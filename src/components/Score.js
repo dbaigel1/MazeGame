@@ -6,7 +6,6 @@ import Username from "./Username"
    and username
 */ 
 function Score(props){
-    const [score, setScore] = useState(0)
     const [visible, setVisible] = useState(false)
     const [username, setUsername] = useState("")
     const [showForm, setShowForm] = useState(false)
@@ -30,12 +29,12 @@ function Score(props){
             <div>
                 <div className="scoreboard" onClick={props.handleClick}>
                     <span className="user">{username}</span>
-                    <span className="score">Score: {score}</span> 
+                    <span className="score">Score: {props.score}</span> 
                 </div>
                 {showForm ? <Username 
                                 showForm={showForm} 
                                 setName={setUsername}
-                                setScore={setScore}
+                                setScore={props.setScore}
                             /> 
                             : null}
             </div>

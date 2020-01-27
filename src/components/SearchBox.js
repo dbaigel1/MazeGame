@@ -1,10 +1,11 @@
 import React from "react"
 
 class SearchBox extends React.Component {
-    constructor() {
+    constructor(props) {
         super()
         this.state = {
-            value: ""
+            value: "",
+
 
         }
         this.handleChange = this.handleChange.bind(this)
@@ -15,9 +16,10 @@ class SearchBox extends React.Component {
         event.preventDefault()
         console.log("submitting!")
         /*put in conditional logic for the values people are submitting*/
-        if ((this.state.value).toLowerCase() === "daniel") {
-            console.log("yep, it'sa me")
-            /*add me to the screen*/ 
+        if ((this.state.value).toLowerCase() === "stars") {
+            console.log("spitting out stars")
+            this.props.setStars(true)
+            this.props.setScore(prevScore => prevScore + 10) 
         }
         
     }

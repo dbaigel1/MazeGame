@@ -86,3 +86,14 @@
   font-size: 30;
   color: brown;
 }
+
+
+/* sky background image */
+.imageContainer {
+  background-color: black;
+}
+
+.skyImage {
+  width: 100%;
+  height: 35%;
+}
