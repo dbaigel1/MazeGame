@@ -32,7 +32,12 @@ function Score(props){
                     <span className="user">{username}</span>
                     <span className="score">Score: {score}</span> 
                 </div>
-                {showForm ? <Username showForm={showForm} setName={setUsername}/> : null}
+                {showForm ? <Username 
+                                showForm={showForm} 
+                                setName={setUsername}
+                                setScore={setScore}
+                            /> 
+                            : null}
             </div>
         ) 
     } 

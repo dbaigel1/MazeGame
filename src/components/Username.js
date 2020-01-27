@@ -14,10 +14,12 @@ class Username extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault()
+        /*set username*/ 
         this.props.setName(this.state.value)
         /* remove form from the maze */
         this.setState({showForm: false})
-   
+        /* add 5 points */
+        this.props.setScore(prevScore => prevScore + 5)
     }
 
     handleChange(event) {
