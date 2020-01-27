@@ -2,13 +2,27 @@ import React, { useState } from 'react'
 import './App.css'
 import Score from "./components/Score"
 import Maze from "./components/Maze"
+import Message from "./components/Message"
+import { timeout } from 'q'
 
 function App() {
   const [mode, setMode] = useState("night")
-  const [visible, setVisible] = useState(false)
+  const [searchvisible, setVisible] = useState(false)
+  const [message, setMessage] = useState("tap 's' to display the scoreboard. After that, you're on your own...")
 
+  /* when scoreboard is clicked, switch between day and night mode */ 
   function handleClick(){
-      setMode(prevMode => prevMode === "night" ? "day" : "night")
+    changeMode()  
+      
+  }
+
+  function changeMode() {
+    setMode(prevMode => prevMode === "night" ? "day" : "night")
+    displayMessage()
+  }
+
+  function displayMessage() {
+    setMessage(mode === "night" ? "day mode" : "night mode")
   }
 
 
@@ -17,15 +31,23 @@ function App() {
   function logKey(e) {
     /* makes the search bar visible */     
     if (e.key === "t"){ 
-      setVisible({visible: true})
+      setVisible({searchvisible: true})
     }
         
-    }
-
+  }
+  
   return (
     <div>
-      <Score handleClick={handleClick}/>
-      <Maze mode={mode} visible={visible}/>
+      <Score 
+        handleClick={handleClick} 
+      />
+
+      <Maze 
+        mode={mode}
+        searchvisible={searchvisible}
+        message={message}
+        setMessage={setMessage}
+      />
     </div>
   )
 }

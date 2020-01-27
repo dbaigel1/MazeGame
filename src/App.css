@@ -54,6 +54,8 @@
   text-align: right;
   position: relative;
   background-color: bisque;
+  height: 80;
+  border: 3px solid rgb(0, 87, 128);
 }
 
 .user {
@@ -77,3 +79,10 @@
   vertical-align: middle;
 }
 
+/* display messages */
+.message {
+  background-color: aquamarine;
+  text-align: center;
+  font-size: 30;
+  color: brown;
+}
