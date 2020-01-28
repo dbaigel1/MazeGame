@@ -12,14 +12,14 @@ function Maze(props) {
             <div>
                 {props.searchvisible ? <SearchBox 
                                         setStars = {props.setStars}
-                                        setOcean = {props.setOcean}
+                                        setBeach = {props.setBeach}
                                         setScore = {props.setScore}
                                         mode = {props.mode}
                                        /> : null
                 }
-                {props.stars || props.ocean ? <Sky mode={props.mode} 
+                {props.stars || props.beach ? <Sky mode={props.mode} 
                                                    stars={props.stars}
-                                                   ocean={props.ocean}
+                                                   beach={props.beach}
                                               /> 
                                             : null}
 

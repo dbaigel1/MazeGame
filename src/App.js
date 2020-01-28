@@ -10,7 +10,7 @@ function App() {
   const [message, setMessage] = useState("tap 's' to display the scoreboard. After that, you're on your own...")
   const [score, setScore] = useState(0)
   const [stars, setStars] = useState(false)
-  const [ocean, setOcean] = useState(false)
+  const [beach, setBeach] = useState(false)
 
   /* when scoreboard is clicked, switch between day and night mode */ 
   function handleClick(){
@@ -55,8 +55,8 @@ function App() {
         setScore = {setScore}
         stars = {stars}
         setStars = {setStars}
-        ocean = {ocean}
-        setOcean = {setOcean}
+        beach = {beach}
+        setBeach = {setBeach}
       />
     </div>
   )

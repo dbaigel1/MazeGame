@@ -20,6 +20,12 @@ class SearchBox extends React.Component {
                 this.props.setScore(prevScore => prevScore + 10) 
             }
         }
+        if ((this.state.value).toLowerCase() === "beach") {
+            if (this.props.mode === "day") {
+                this.props.setBeach(true)
+                this.props.setScore(prevScore => prevScore + 10) 
+            }
+        }
         
     }
 

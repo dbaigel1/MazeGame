@@ -6,10 +6,10 @@ function Sky(props) {
         source = "../images/stars.jpg"
     }
     else {
-        source = "../images/ocean.jpg"
+        source = "../images/beach.jpg"
     }
     
-    if ((props.mode === "night" && props.stars) || (props.mode === "day" && props.ocean)) {
+    if ((props.mode === "night" && props.stars) || (props.mode === "day" && props.beach)) {
         return (
             <div className="imageContainer">
                 <img className="skyImage" src={source}/>
