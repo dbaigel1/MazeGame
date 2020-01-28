@@ -4,9 +4,7 @@ class SearchBox extends React.Component {
     constructor(props) {
         super()
         this.state = {
-            value: "",
-
-
+            value: ""
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -17,9 +15,10 @@ class SearchBox extends React.Component {
         console.log("submitting!")
         /*put in conditional logic for the values people are submitting*/
         if ((this.state.value).toLowerCase() === "stars") {
-            console.log("spitting out stars")
-            this.props.setStars(true)
-            this.props.setScore(prevScore => prevScore + 10) 
+            if (this.props.mode === "night") {
+                this.props.setStars(true)
+                this.props.setScore(prevScore => prevScore + 10) 
+            }
         }
         
     }

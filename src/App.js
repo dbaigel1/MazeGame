@@ -3,17 +3,19 @@ import './App.css'
 import Score from "./components/Score"
 import Maze from "./components/Maze"
 import Message from "./components/Message"
-import { timeout } from 'q'
 
 function App() {
   const [mode, setMode] = useState("night")
   const [searchvisible, setVisible] = useState(false)
   const [message, setMessage] = useState("tap 's' to display the scoreboard. After that, you're on your own...")
   const [score, setScore] = useState(0)
+  const [stars, setStars] = useState(false)
+  const [ocean, setOcean] = useState(false)
 
   /* when scoreboard is clicked, switch between day and night mode */ 
   function handleClick(){
-    changeMode()  
+    changeMode()
+    //setStars(mode === "night" ? false : true)  
       
   }
 
@@ -51,6 +53,10 @@ function App() {
         message={message}
         setMessage={setMessage}
         setScore = {setScore}
+        stars = {stars}
+        setStars = {setStars}
+        ocean = {ocean}
+        setOcean = {setOcean}
       />
     </div>
   )

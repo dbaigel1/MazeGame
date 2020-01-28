@@ -6,20 +6,23 @@ import Sky from "./Sky"
    It gets props from App to determine when to display things on the board
 */
 function Maze(props) {
-    const [stars, setStars] = useState(false)
-    const [ocean, setOcean] = useState(false)
-
 
     return (
         <div className={props.mode}>
             <div>
                 {props.searchvisible ? <SearchBox 
-                                        setStars={setStars}
-                                        setOcean={setOcean}
-                                        setScore={props.setScore}
+                                        setStars = {props.setStars}
+                                        setOcean = {props.setOcean}
+                                        setScore = {props.setScore}
+                                        mode = {props.mode}
                                        /> : null
                 }
-                {stars || ocean ? <Sky mode={props.mode}/> : null}
+                {props.stars || props.ocean ? <Sky mode={props.mode} 
+                                                   stars={props.stars}
+                                                   ocean={props.ocean}
+                                              /> 
+                                            : null}
+
             </div>
             <Message message={props.message} setMessage={props.setMessage}/>
         </div>

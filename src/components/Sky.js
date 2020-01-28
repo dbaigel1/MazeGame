@@ -8,11 +8,18 @@ function Sky(props) {
     else {
         source = "../images/ocean.jpg"
     }
-    return (
-        <div className="imageContainer">
-            <img className="skyImage" src={source}/>
-        </div>
-    )
+    
+    if ((props.mode === "night" && props.stars) || (props.mode === "day" && props.ocean)) {
+        return (
+            <div className="imageContainer">
+                <img className="skyImage" src={source}/>
+            </div>
+        )
+    }
+    else{
+        return null
+    }
+    
 }
 
 export default Sky
