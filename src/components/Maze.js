@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import SearchBox from "./SearchBox"
 import Message from "./Message"
 import Sky from "./Sky"
+import Weather from "./Weather"
 /* Maze component handles the playing field
    It gets props from App to determine when to display things on the board
 */
@@ -94,8 +95,9 @@ function Maze(props) {
 
             </div>
             <Message message={props.message} setMessage={props.setMessage}/>
-            {location ? <h1>{location[0]} {location[1]}</h1> : null}
-            {weatherData ? <h1>{weatherData.main.temp}</h1> : null}
+            {weatherData ? <Weather 
+                                data={weatherData}
+                           /> : null}
             
         </div>
     )

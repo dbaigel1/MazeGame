@@ -3,7 +3,6 @@ import './App.css'
 import Score from "./components/Score"
 import Maze from "./components/Maze"
 import Message from "./components/Message"
-import Weather from "./components/Weather"
 
 function App() {
   const [mode, setMode] = useState("night")
