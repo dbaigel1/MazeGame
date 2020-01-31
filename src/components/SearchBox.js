@@ -17,13 +17,17 @@ class SearchBox extends React.Component {
         if ((this.state.value).toLowerCase() === "stars") {
             if (this.props.mode === "night") {
                 this.props.setStars(true)
-                this.props.setScore(prevScore => prevScore + 10) 
+                if (!this.props.stars) {
+                    this.props.setScore(prevScore => prevScore + 10) 
+                }
             }
         }
         if ((this.state.value).toLowerCase() === "beach") {
             if (this.props.mode === "day") {
                 this.props.setBeach(true)
-                this.props.setScore(prevScore => prevScore + 10) 
+                if (!this.props.beach) {
+                    this.props.setScore(prevScore => prevScore + 10) 
+                }
             }
         }
         

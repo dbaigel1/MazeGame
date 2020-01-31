@@ -87,6 +87,10 @@
   color: brown;
 }
 
+.messagehidden {
+  display: none;
+}
+
 
 /* sky background image */
 .imageContainer {

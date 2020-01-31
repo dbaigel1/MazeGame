@@ -12,7 +12,7 @@ function Sky(props) {
     if ((props.mode === "night" && props.stars) || (props.mode === "day" && props.beach)) {
         return (
             <div className="imageContainer">
-                <img className="skyImage" src={source}/>
+                <img className="skyImage" src={source} alt="sky"/>
             </div>
         )
     }
