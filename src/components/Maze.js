@@ -6,7 +6,7 @@ import Sky from "./Sky"
    It gets props from App to determine when to display things on the board
 */
 function Maze(props) {
-
+    
     return (
         <div className={props.mode}>
             <div>
@@ -25,6 +25,9 @@ function Maze(props) {
 
             </div>
             <Message message={props.message} setMessage={props.setMessage}/>
+            {props.location ? <h1>{props.location[0]} {props.location[1]}</h1> : null}
+            {props.data ? <h1>{props.data.main.temp}</h1> : null}
+            
         </div>
     )
 }
