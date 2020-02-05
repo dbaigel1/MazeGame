@@ -15,7 +15,7 @@ function Maze(props) {
     const [location, setLocation] = useState("")
     const [gotWeather, setGotWeather] = useState(false)
     const [daniel, setDaniel] = useState(false)
-    const [boat, setBoat] = useState(false)
+    const [city, setCity] = useState(false)
 
     //when w is pressed and the location is retrieved
     useEffect(() => { 
@@ -94,20 +94,22 @@ function Maze(props) {
                                         beach = {beach}
                                         setDaniel = {setDaniel}
                                         daniel = {daniel}
+                                        setCity = {setCity}
+                                        city = {city}
                                        /> : null
                 }
                 <Message message={props.message} setMessage={props.setMessage}/>
                 {stars || beach ? <Sky mode={props.mode} 
-                                                   stars={stars}
-                                                   beach={beach}
-                                              /> 
-                                            : null}
-
-                {daniel || boat ? <Ground mode={props.mode} 
-                                          daniel={daniel}
-                                          boat={boat}
+                                       stars={stars}
+                                       beach={beach}
                                   /> 
-                                            : null}
+                                  : null}
+
+                {daniel || city ? <Ground mode={props.mode} 
+                                          daniel={daniel}
+                                          city={city}
+                                  /> 
+                                  : null}
             </div>
             
             {weatherData ? <Weather 

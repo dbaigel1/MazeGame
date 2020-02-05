@@ -37,6 +37,14 @@ class SearchBox extends React.Component {
                 }
             }
         }
+        if (((this.state.value).toLowerCase() === "city")) {
+            if (this.props.mode === "night") {
+                this.props.setCity(true)
+                if (!this.props.city) {
+                    this.props.setScore(prevScore => prevScore + 10) 
+                }
+            }
+        }
         
     }
 

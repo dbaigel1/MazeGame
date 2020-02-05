@@ -5,7 +5,7 @@ function Weather(props) {
     const [data] = useState(props.data)
     const optionsCursorTrueWithMargin = {
         followCursor:true,
-        shiftX:10,
+        shiftX:-250,
         shiftY:10
     }
 
@@ -14,14 +14,14 @@ function Weather(props) {
     }, [data])
 
     return (
-        <div>
+        <div className="weather">
             <ReactHover options={optionsCursorTrueWithMargin}>
                 <ReactHover.Trigger type="trigger">
-                    <div className="weather">
+                    <div>
                         <h4>{data.name}</h4>
                         <h3>{data.weather[0].main}</h3>
                         <h2>{Math.round(data.main.temp)}</h2>
-                        <h6>Min: {Math.round(data.main.temp_min)}  Max: {Math.round(data.main.temp_max)}</h6>
+                        <h5>Min: {Math.round(data.main.temp_min)}  Max: {Math.round(data.main.temp_max)}</h5>
                     </div>
                 </ReactHover.Trigger>
                 <ReactHover.Hover type="hover">
