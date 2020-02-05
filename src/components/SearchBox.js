@@ -13,7 +13,6 @@ class SearchBox extends React.Component {
     handleSubmit(event) {
         event.preventDefault()
         console.log("submitting!")
-        /*put in conditional logic for the values people are submitting*/
         if ((this.state.value).toLowerCase() === "stars") {
             if (this.props.mode === "night") {
                 this.props.setStars(true)

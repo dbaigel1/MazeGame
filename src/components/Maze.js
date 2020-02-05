@@ -17,10 +17,12 @@ function Maze(props) {
     //when w is pressed and the location is retrieved
     useEffect(() => { 
         if (gotWeather && location) {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${location[0]}&lon=${location[1]}&units=imperial&APPID=ad3fa995d613cd69122cfffc24bc1222`)
-        .then(response => response.json())
-        .then(data => setData(data))
-        
+          fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${location[0]}&lon=${location[1]}&units=imperial&APPID=ad3fa995d613cd69122cfffc24bc1222`)
+          .then(response => response.json())
+          .then(data => setData(data))
+          
+          //set the score
+          props.setScore((prevScore) => prevScore + 10)
         }
     }, [location])
 

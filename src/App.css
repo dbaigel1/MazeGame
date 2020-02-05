@@ -86,3 +86,15 @@
   border: solid 3px maroon;
 
 }
+
+.weathertooltip {
+  background-color: aquamarine;
+  color: black;
+  border: solid 2px maroon;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 90px;
+  width: 300px;
+
+}
