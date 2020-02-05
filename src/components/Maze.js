@@ -3,6 +3,7 @@ import SearchBox from "./SearchBox"
 import Message from "./Message"
 import Sky from "./Sky"
 import Weather from "./Weather"
+import Ground from "./Ground"
 /* Maze component handles the playing field
    It gets props from App to determine when to display things on the board
 */
@@ -13,15 +14,18 @@ function Maze(props) {
     const [weatherData, setData] = useState("")
     const [location, setLocation] = useState("")
     const [gotWeather, setGotWeather] = useState(false)
+    const [daniel, setDaniel] = useState(false)
+    const [boat, setBoat] = useState(false)
 
     //when w is pressed and the location is retrieved
     useEffect(() => { 
+        
         if (gotWeather && location) {
+          console.log("calling api")
           fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${location[0]}&lon=${location[1]}&units=imperial&APPID=ad3fa995d613cd69122cfffc24bc1222`)
           .then(response => response.json())
           .then(data => setData(data))
           
-          //set the score
           props.setScore((prevScore) => prevScore + 10)
         }
     }, [location])
@@ -29,7 +33,8 @@ function Maze(props) {
     //get location when w is pressed
     useEffect(() => {
         if (gotWeather) {
-        getLocation()
+          console.log("getting location")
+          getLocation()
         }
     }, [gotWeather])
 
@@ -50,7 +55,7 @@ function Maze(props) {
               setGotWeather(true)
             }
             
-          }
+        }
             
     }
 
@@ -87,16 +92,24 @@ function Maze(props) {
                                         mode = {props.mode}
                                         stars = {stars}
                                         beach = {beach}
+                                        setDaniel = {setDaniel}
+                                        daniel = {daniel}
                                        /> : null
                 }
+                <Message message={props.message} setMessage={props.setMessage}/>
                 {stars || beach ? <Sky mode={props.mode} 
                                                    stars={stars}
                                                    beach={beach}
                                               /> 
                                             : null}
 
+                {daniel || boat ? <Ground mode={props.mode} 
+                                          daniel={daniel}
+                                          boat={boat}
+                                  /> 
+                                            : null}
             </div>
-            <Message message={props.message} setMessage={props.setMessage}/>
+            
             {weatherData ? <Weather 
                                 data={weatherData}
                            /> : null}

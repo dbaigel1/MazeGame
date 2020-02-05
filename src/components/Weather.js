@@ -2,7 +2,7 @@ import React, { useState, useEffect} from "react"
 import ReactHover from "react-hover"
 
 function Weather(props) {
-    const [data, setData] = useState(props.data)
+    const [data] = useState(props.data)
     const optionsCursorTrueWithMargin = {
         followCursor:true,
         shiftX:10,

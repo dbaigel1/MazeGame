@@ -67,6 +67,11 @@
   width: 100%;
   height: 35%;
 }
+/* ground background image */
+.groundImage {
+  width: 30%;
+  height: 40%;
+}
 
 /* weather console */
 .weather {
