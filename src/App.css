@@ -18,22 +18,23 @@
 
 /* scoreboard */
 .scoreboard {
-  text-align: right;
-  position: relative;
+  /*text-align: right;
+  position: relative;*/
+  display: flex;
   background-color: bisque;
   height: 80;
   border: 3px solid rgb(0, 87, 128);
+  justify-content: space-between;
+  align-items: center;
 }
 
-.user {
-  left: 10;
-  position: absolute;
-  font-size: 30;
+ .scoreItem {
+  height: 40;
+  width: 250;
+  margin: auto;
+  font-size: 35;
 }
 
-.score {
-  font-size: 30;
-}
 
 .inputUser {
   text-align: center;

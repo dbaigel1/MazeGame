@@ -24,12 +24,16 @@ function Score(props){
         }
     }
 
+    const styles = {
+        textAlign: "right"
+    }
     if (visible === true) { 
         return (
             <div>
                 <div className="scoreboard" onClick={props.handleClick}>
-                    <span className="user">{username}</span>
-                    <span className="score">Score: {props.score}</span> 
+                    <div className="scoreItem">{username}</div>
+                    <div className = "scoreItem">The Maze Game</div>
+                    <div className="scoreItem" style={styles}>Score: {props.score}</div> 
                 </div>
                 {showForm ? <Username 
                                 showForm={showForm} 

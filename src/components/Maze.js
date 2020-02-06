@@ -108,6 +108,7 @@ function Maze(props) {
                 {daniel || city ? <Ground mode={props.mode} 
                                           daniel={daniel}
                                           city={city}
+                                          setScore={props.setScore}
                                   /> 
                                   : null}
             </div>

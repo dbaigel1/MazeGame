@@ -35,6 +35,7 @@ class Username extends React.Component {
                             placeholder = "Enter Username" 
                             onChange={this.handleChange}
                             value={this.state.value}
+                            maxLength="12"
                         />
                         <button>Submit</button>
                     </form>
